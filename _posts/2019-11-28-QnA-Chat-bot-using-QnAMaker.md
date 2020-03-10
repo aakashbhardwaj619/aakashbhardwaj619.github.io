@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Create QnA Chat Bot using Microsoft Azure QnA Maker, SharePoint and Power Automate"
+date: 2019-11-28
+---
+
 ## Introduction
 
 This article shows how a SharePoint Frequently Asked Questions (FAQ) List data can be set as the data source for a QnA Maker Knowledge Base and used in an SPFx Chat Bot web part so that users can get the answers to their queries from within SharePoint.
