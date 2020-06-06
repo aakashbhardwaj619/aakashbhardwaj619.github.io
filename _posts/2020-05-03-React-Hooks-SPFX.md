@@ -43,7 +43,9 @@ In the functional *ListItemsHooks *component instead of a constructor to initi
 
 The [*useState*](https://reactjs.org/docs/hooks-state.html)hook declares a state variable and returns it along with a method to update its value. The argument passed to this hook becomes the initial value of the state variable and it returns an array that consists of the state variable along with its update method. The names for the variable and the method can be anything. Multiple variables can be declared using the below format and calling their update methods will replace the variable unlike *this.setState* that merges the updated values with older ones.
 
+```
 const [varName, varUpdateMethod] = useState(varInitialValue);
+```
 
 In the *ListItemsHooks *component *lists* is our state variable that is initialised with a blank value and *setLists* is the method that is called to update its value when the list is changed in List Picker control.
 
@@ -69,11 +71,13 @@ In Function Components the *componentDidMount, componentDidUpdate and component
 
 The [*useEffect*](https://reactjs.org/docs/hooks-effect.html) method accepts a method as its argument that gets called every time the component renders and updates. Passing an empty array as the second argument to *useEffect* imitates the behaviour of *componentDidMount* as it calls the argument method only on first render. However, if any prop or state variable is passed in this array, then the argument method would be called on first render and every time the passed in variable is updated. This is similar to comparing the *lists* updated property with previous property and then fetching the list items in class based *ListItemsViewer*'s *componentDidUpdate.*
 
+```
 useEffect(() => {
 
   //Run the method on render
 
 }, [val]); //Only re run the method when val changes
+```
 
 Conclusion
 ----------
