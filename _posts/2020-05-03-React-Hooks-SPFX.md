@@ -12,7 +12,7 @@ In the latest versions of SPFx, React 16.8 is supported which means we can take 
 Sample Solution
 ---------------
 
-![React List Items SPFx Web Parts](https://media-exp1.licdn.com/dms/image/C5612AQGg8v2KuTL04Q/article-inline_image-shrink_1500_2232/0?e=1596672000&v=beta&t=Aq6qrJF-imBmo1TOSF0MtoYgu_PxIokBPIZVtSbxoCU)
+![React List Items SPFx Web Parts](/public/images/React-Hooks-SPFX/ReactListItemsScreenshot.png)
 
 We will have a look at a sample solution to see how a SharePoint list's items can be fetched and rendered using one web part that uses React class components and another one that uses functional components and built-in *useState*, *useEffect* and *useContext* Hooks. Each web part renders a main React component that has a [PnP List Picker React control](https://sharepoint.github.io/sp-dev-fx-controls-react/controls/ListPicker) and a child *ListItemsViewer* React component that lists the list items whenever the List in List Picker is updated.
 
@@ -20,19 +20,19 @@ We will have a look at a sample solution to see how a SharePoint list's items ca
 
 ### Class Component (*ListItemsClassic*)
 
-[![ListItemsClassic.tsx](https://media-exp1.licdn.com/dms/image/C5612AQFNUU9RCvYkhQ/article-inline_image-shrink_1500_2232/0?e=1596672000&v=beta&t=jRhdfV7YbaYZbu60RbNBoUfmJ2tBtQU91hpmdbvwFX4)](http://github.com/aakashbhardwaj619/react-list-items/blob/master/src/webparts/listItemsClassic/components/ListItemsClassic.tsx)
+[![ListItemsClassic.tsx](/public/images/React-Hooks-SPFX/ListItemsClassic.png)](http://github.com/aakashbhardwaj619/react-list-items/blob/master/src/webparts/listItemsClassic/components/ListItemsClassic.tsx)
 
 ### Class Component (*ListItemsViewer*)
 
-[![ListItemsViewer.tsx](https://media-exp1.licdn.com/dms/image/C5612AQFI-eMyyGMMQw/article-inline_image-shrink_1500_2232/0?e=1596672000&v=beta&t=AA-GKCmn34hI2RECjWHNy46R402UKx8lGHbPN2ZYWug)](http://github.com/aakashbhardwaj619/react-list-items/blob/master/src/webparts/listItemsClassic/components/ListItemsViewer.tsx)
+[![ListItemsViewer.tsx](/public/images/React-Hooks-SPFX/ClassListItemsViewer.png)](http://github.com/aakashbhardwaj619/react-list-items/blob/master/src/webparts/listItemsClassic/components/ListItemsViewer.tsx)
 
 ### Functional Component (*ListItemsHooks*)
 
-[![ListItemsHooks.tsx](https://media-exp1.licdn.com/dms/image/C5612AQFqyUp6AUbl5w/article-inline_image-shrink_1500_2232/0?e=1596672000&v=beta&t=eHzSO5h3XbzR-ZDfRH_cYecfyL__Ix7pbY8JqKRm4C8)](http://github.com/aakashbhardwaj619/react-list-items/blob/master/src/webparts/listItemsHooks/components/ListItemsHooks.tsx)
+[![ListItemsHooks.tsx](/public/images/React-Hooks-SPFX/ListItemsHooks.png)](http://github.com/aakashbhardwaj619/react-list-items/blob/master/src/webparts/listItemsHooks/components/ListItemsHooks.tsx)
 
-Functional Component (*ListItemsViewer*)
+### Functional Component (*ListItemsViewer*)
 
-[![ListItemsViewer.tsx](https://media-exp1.licdn.com/dms/image/C5612AQEkuXlvhJkeRQ/article-inline_image-shrink_1500_2232/0?e=1596672000&v=beta&t=g_sIfL2hLu2tpVkoE4w3sbCMbdNSCf8VgCfoe-E8Dpk)](http://github.com/aakashbhardwaj619/react-list-items/blob/master/src/webparts/listItemsHooks/components/ListItemsViewer.tsx)
+[![ListItemsViewer.tsx](/public/images/React-Hooks-SPFX/ListItemsViewer.png)](http://github.com/aakashbhardwaj619/react-list-items/blob/master/src/webparts/listItemsHooks/components/ListItemsViewer.tsx)
 
 useState
 --------
