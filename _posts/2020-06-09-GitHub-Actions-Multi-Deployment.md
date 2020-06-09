@@ -16,8 +16,9 @@ YAML Configuration
 
 The GitHub Actions Workflow YAML file for building and deploying the SPFx solution looks like the one below. Here we have added the steps for configuring our environment, running automated tests, bundling our `sppkg` package file and executing the bash deployment script.
 
-> For getting started using GitHub Actions for SPFx please refer to the article [Create GitHub actions for SPFx solution](https://medium.com/@anoopt/create-github-actions-for-spfx-solution-cc4a810b87db) from Anoop.
+> For getting started using GitHub Actions for SPFx please refer to the article [Create GitHub actions for SPFx solution](https://medium.com/@anoopt/create-github-actions-for-spfx-solution-cc4a810b87db) from [Anoop](https://twitter.com/anooptells).
 
+{% raw %}
 ```
 name: SPFx CI CD
 
@@ -74,6 +75,7 @@ jobs:
         O365_CLI_SCRIPT_PATH: './scripts/DeployPackage.sh'
 
 ```
+{% endraw %}
 
 Bash Deployment Script
 ----------------------
@@ -120,4 +122,4 @@ o365 spo mail send --webUrl ${sites[0]} --to 'aakash.bhardwaj@in8aakbh.onmicroso
 Conclusion
 ----------
 
-Thus we saw how we can deploy an SPFx app package to multiple site collections from a custom bash scropt using Office 365 CLI commands.
+Thus we saw how we can deploy an SPFx app package to multiple site collections from a custom bash script using Office 365 CLI commands.
