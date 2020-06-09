@@ -48,7 +48,7 @@ The Azure Web App Bot will be our client application that will use the above cre
 
 -   Once the deployment is successful you can use the  **Test in Web Chat**  feature to test the chat bot.
 
-![Test in Web Chat](/public/images/QnAMaker-chatbot/TestChat.png)
+![Test in Web Chat](/public/images/QnAMaker-chatbot/TestChat.PNG)
 
 ### SharePoint FAQ List
 
