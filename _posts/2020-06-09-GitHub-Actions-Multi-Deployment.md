@@ -7,14 +7,14 @@ date: 2020-06-09
 Introduction
 ------------
 
-Recently I came across a requirement to create a GitHub Action Workflow for the build and deployment of an SPFx solution to a large number of sites that were using their own site collection scoped app catalogs. The [Office 365 CLI Deploy App](https://github.com/marketplace/actions/office-365-cli-deploy-app) action provides the option to deploy to either the tenant app catalog or a site collection app catalog. Deploying our app package to all those sites using this action seems cumbersome as we would need to repeat this step with different `SITE_COLLECTION_URL` values.
+Recently I came across a requirement to create a GitHub Action Workflow for the build and deployment of an SPFx solution to a large number of sites that were using site collection scoped app catalogs. The [Office 365 CLI Deploy App](https://github.com/marketplace/actions/office-365-cli-deploy-app) action provides the option to deploy to either the tenant app catalog or the site collection app catalog. Deploying the app package to all these sites using this action would have been cumbersome as it would require repeating this step with different `SITE_COLLECTION_URL` values.
 
-Another approach for this scenario would be to write a separate script that would handle the deploymeny steps and execute this script from the pipeline using the [Office 365 CLI Run Script](https://github.com/marketplace/actions/office-365-cli-run-script) action.
+Fortunately, there is an alternate approach to achieve this scenario by writing a separate script that would handle the deployment steps and executing this script from the YAML workflow using the [Office 365 CLI Run Script](https://github.com/marketplace/actions/office-365-cli-run-script) action.
 
 YAML Configuration
 -------------------
 
-The GitHub Actions Workflow YAML file for building and deploying the SPFx solution looks like the one below. Here we have added the steps for configuring our environment, running automated tests, bundling our `sppkg` package file and executing the bash deployment script.
+The GitHub Actions Workflow YAML file for building and deploying the SPFx solution looks like the one below. It consists of the steps for configuring the environment, running automated tests, bundling the `sppkg` package file, and executing the bash deployment script.
 
 > For getting started using GitHub Actions for SPFx please refer to the article [Create GitHub actions for SPFx solution](https://medium.com/@anoopt/create-github-actions-for-spfx-solution-cc4a810b87db) from [Anoop](https://twitter.com/anooptells).
 
@@ -80,7 +80,7 @@ jobs:
 Bash Deployment Script
 ----------------------
 
-The below bash script traverses each of the site collections added in the `sites` array and deploys the app package to its site collection app catalog using the [o365 spo app add](https://pnp.github.io/office365-cli/cmd/spo/app/app-add/) command. It also checks the app info to see if the app needs to be installed or upgraded using the [o365 spo app upgrade](https://pnp.github.io/office365-cli/cmd/spo/app/app-upgrade/) and [o365 apo app install](https://pnp.github.io/office365-cli/cmd/spo/app/app-install/) commands. Lastly it sends a completion email, using the [o365 spo mail send](https://pnp.github.io/office365-cli/cmd/spo/mail/mail-send/) command, once the deployment is completed.
+The below bash script traverses each of the site collections added in the `sites` array and deploys the app package to its site collection app catalog using the [o365 spo app add](https://pnp.github.io/office365-cli/cmd/spo/app/app-add/) command. It also checks the app info to see if the app needs to be installed or upgraded using the [o365 spo app upgrade](https://pnp.github.io/office365-cli/cmd/spo/app/app-upgrade/) and [o365 apo app install](https://pnp.github.io/office365-cli/cmd/spo/app/app-install/) commands. Lastly, it sends a completion email, using the [o365 spo mail send](https://pnp.github.io/office365-cli/cmd/spo/mail/mail-send/) command, once the deployment is completed.
 
 > Similar script can also be written using PowerShell when using windows runner
 
@@ -122,4 +122,4 @@ o365 spo mail send --webUrl ${sites[0]} --to 'aakash.bhardwaj@in8aakbh.onmicroso
 Conclusion
 ----------
 
-Thus we saw how we can deploy an SPFx app package to multiple site collections from a custom bash script using Office 365 CLI commands.
+In this way, an SPFx app package can be deployed to multiple site collections from a custom bash script using Office 365 CLI commands.
