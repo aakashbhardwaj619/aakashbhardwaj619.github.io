@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Deploy SPFx solutions on multiple sites using GitHub Actions"
+title: "Deploy SPFx solutions on multiple sites using GitHub Actions and Office 365 CLI"
 date: 2020-06-09
 ---
 
