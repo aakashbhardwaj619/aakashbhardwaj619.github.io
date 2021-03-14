@@ -11,7 +11,13 @@ cfg: { // Application Insights Configuration
 }});
 </script>
 
-# Teams App Deployment to Azure Web App
+---
+layout: post
+title: "Teams App Deployment to Azure Web App"
+date: 2020-03-15
+---
+
+# Introduction
 
 Recently I was working on a Teams app development using [yo teams](https://github.com/pnp/generator-teams) generator for one of my clients. The documentation for getting started and creating a Teams tab from scratch was really helpful and allowed for a smooth development experience. 
 
