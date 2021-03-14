@@ -9,7 +9,6 @@ crossOrigin: "anonymous", // When supplied this will add the provided value as t
 cfg: { // Application Insights Configuration
     instrumentationKey: "d5daad01-d232-4bf0-9427-2c8a8f94c4a2"
 }});
-window.appInsights.trackPageView({name: 'Teams App Deployment'});
 </script>
 
 # Teams App Deployment to Azure Web App
@@ -39,20 +38,21 @@ Using Git deploy to publish an app to Azure Web App enables automatic deployment
 
 For our app deployment we will use a custom deployment script using the below steps:
 
-- Install kuduscript tool globally using the below command
+- Install kuduscript tool globally using the below command.
 ```
 npm install kuduscript -g
 ```
 
-- Run the below command in the root of the Teams app repository to create the deployment script for a Node.js application
+- Run the below command in the root of the Teams app repository to create the deployment script for a Node.js application.
 ```
 kuduscript -y --node
 ```
 - This will generate two files 
   - `.deployment` - Contains the command to run for deploying your site.
-  - `deploy.cmd` - Contains the deployment script (or deploy.sh if running on Mac/Linux)
+  - `deploy.cmd` - Contains the deployment script (or deploy.sh if running on Mac/Linux).
 
-- Update the `deploy.cmd` file with the below content that contains steps specific for a `yo teams` generated project
+- Update the `deploy.cmd` file with the below content that contains steps specific for a `yo teams` generated project.
+
 ```cmd
 @if "%SCM_TRACE_LEVEL%" NEQ "4" @echo off
 
