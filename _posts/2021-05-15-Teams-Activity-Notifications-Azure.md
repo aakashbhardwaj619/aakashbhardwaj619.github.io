@@ -21,7 +21,7 @@ cfg: { // Application Insights Configuration
 
 The Microsoft Teams activity feed is a great way to notify users of any items that require their attention. These notifications appear in the Activity tab of Microsoft Teams client and are comprised of multiple bits of information that give details about the notification. For example, the below notification informs the user about the sender, notification reason, and some other useful details.
 
-![Teams Activity Notification Details](/public/images/Teams-Activity-Notifications-Azure/TeamsNotificationDetails.png)
+![Teams Activity Notification Details](/public/images/Teams-Activity-Notifications-Azure//TeamsNotificationDetails.jpeg)
 
 The Microsoft Graph Activity Feed API allows us to send such activity notifications to users and extend this functionality in custom apps. In this article we will explore one such approach of automatically sending activity notifications to Teams users using an Azure Event Grid, Azure Function, Teams App, and Microsoft Graph. This approach can be used for sending notifications triggered from any external events or custom apps to users in Teams.
 
@@ -29,7 +29,7 @@ The Microsoft Graph Activity Feed API allows us to send such activity notificati
 
 The below diagram describes the different components and series of steps that are executed to send the activity notifications to users using an Azure AD App credentials.
 
-![Solution Architecture](/public/images/Teams-Activity-Notifications-Azure/Architecture.png)
+![Solution Architecture](/public/images/Teams-Activity-Notifications-Azure//Architecture.PNG)
 
 1. Any custom app publishes an event to an Event Grid Custom Topic sending notification details like *userId*, *taskId*, *notificationUrl*.
 2. The event notifies the Event Grid Subscription for this topic.
@@ -117,9 +117,9 @@ Azure Event Grid is a great service to build event-based applications. It has a 
 For our solution, an event grid custom topic would be created to which any external publisher or custom app can send events. This custom topic would have a subscription that would trigger the Azure Function created above. The below steps would be required to achieve this functionality:
 
 1. Create an Azure Event Grid Topic with the appropriate details.
-![Create Event Grid Topic](/public/images/Teams-Activity-Notifications-Azure/EventGridTopic.jpeg)
+![Create Event Grid Topic](/public/images/Teams-Activity-Notifications-Azure//EventGridTopic.jpeg)
 2. Create an Event Subscription for the topic and select the Azure Function as the endpoint.
-![Create Event Grid Subscription](/public/images/Teams-Activity-Notifications-Azure/EventGridSubscription.jpeg)
+![Create Event Grid Subscription](/public/images/Teams-Activity-Notifications-Azure//EventGridSubscription.jpeg)
 3. Get the Event Grid Topic endpoint and Access Key values and copy them somewhere.
 4. Using Postman/Curl, send a POST request to the Topic endpoint along with the Access Key value in *aeg-sas-key* request header and the below data in request body.
     - *userId* is the Id of the user in Microsoft Graph to whom the notification needs to be sent. This can be retrieved by calling the https://graph.microsoft.com/v1.0/me?$select=id endpoint in Microsoft Graph Explorer.
@@ -143,7 +143,7 @@ For our solution, an event grid custom topic would be created to which any exter
 ]
 ```
 
-![Execute POST Request using Postman](/public/images/Teams-Activity-Notifications-Azure/PublishPostman.png)
+![Execute POST Request using Postman](/public/images/Teams-Activity-Notifications-Azure//PublishPostman.PNG)
 
 If everything is setup correctly then there must be an activity notification sent to the user that will appear as a popup and in the Activity tab of Teams.
 
