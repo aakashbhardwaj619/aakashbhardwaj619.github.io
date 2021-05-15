@@ -75,6 +75,7 @@ An event grid triggered Azure Function would get executed every time our custom 
 
 - Create an Event Grid Triggered C# Azure Function in VS Code and add the **Microsoft.Graph** and **Microsoft.Identity.Client** Nuget packages.
 - Call the *Users.Teamwork.SendActivityNotification* method of the Graph SDK to send the activity notification to a user.
+
 ```csharp
 GraphServiceClient graphServiceClient = new GraphServiceClient(authenticationProvider);
 
@@ -106,6 +107,7 @@ await graphServiceClient.Users[userId].Teamwork
         .Request()
         .PostAsync();
 ```
+
 - Deploy the code to an Azure Function App using the VS Code Azure Function extension.
 
 > Full source code of the Azure Function for this solution can be found [here](https://github.com/aakashbhardwaj619/teams-activity-notifications-function/tree/main/AzureFunction).
